@@ -1,0 +1,205 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32756 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:271), pid=13752, tid=6528
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_05-b13) (build 1.8.0_05-b13)
+# Java VM: Java HotSpot(TM) Client VM (25.5-b02 mixed mode windows-x86 )
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x14eb8800):  JavaThread "C1 CompilerThread0" daemon [_thread_in_native, id=6528, stack(0x15310000,0x15360000)]
+
+Stack: [0x15310000,0x15360000],  sp=0x1535ef08,  free space=315k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x1921e8]
+V  [jvm.dll+0x18b328]
+V  [jvm.dll+0x80d49]
+V  [jvm.dll+0x80fbf]
+V  [jvm.dll+0x8131a]
+V  [jvm.dll+0x697ab]
+V  [jvm.dll+0x69b4d]
+V  [jvm.dll+0x6acd3]
+V  [jvm.dll+0x1e35b]
+V  [jvm.dll+0x26ee58]
+V  [jvm.dll+0x272b90]
+V  [jvm.dll+0x274788]
+V  [jvm.dll+0x276d20]
+V  [jvm.dll+0x277187]
+V  [jvm.dll+0x273c08]
+V  [jvm.dll+0x275df6]
+V  [jvm.dll+0x276816]
+V  [jvm.dll+0x27a6fd]
+V  [jvm.dll+0x27a84b]
+V  [jvm.dll+0x268622]
+V  [jvm.dll+0x26880b]
+V  [jvm.dll+0x26895a]
+V  [jvm.dll+0x268ac2]
+V  [jvm.dll+0x268d42]
+V  [jvm.dll+0x65aba]
+V  [jvm.dll+0x66179]
+V  [jvm.dll+0x1645fc]
+V  [jvm.dll+0x164e8a]
+V  [jvm.dll+0x1a9186]
+C  [msvcr100.dll+0x5c556]
+C  [msvcr100.dll+0x5c600]
+C  [kernel32.dll+0x13677]
+C  [ntdll.dll+0x39d72]
+C  [ntdll.dll+0x39d45]
+
+
+Current CompileTask:
+C1:  62082   23             sun.nio.cs.UTF_8$Decoder::decodeArrayLoop (671 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x14ebdc00 JavaThread "Service Thread" daemon [_thread_blocked, id=11508, stack(0x15390000,0x153e0000)]
+=>0x14eb8800 JavaThread "C1 CompilerThread0" daemon [_thread_in_native, id=6528, stack(0x15310000,0x15360000)]
+  0x14ec8400 JavaThread "Attach Listener" daemon [_thread_blocked, id=11296, stack(0x15240000,0x15290000)]
+  0x14ec5400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=6456, stack(0x15450000,0x154a0000)]
+  0x14e7f400 JavaThread "Finalizer" daemon [_thread_blocked, id=14160, stack(0x151e0000,0x15230000)]
+  0x14e79800 JavaThread "Reference Handler" daemon [_thread_blocked, id=14144, stack(0x152b0000,0x15300000)]
+  0x00f4bc00 JavaThread "main" [_thread_in_native, id=13784, stack(0x02660000,0x026b0000)]
+
+Other Threads:
+  0x14e76400 VMThread [stack: 0x00ef0000,0x00f40000] [id=14092]
+  0x14ebf000 WatcherThread [stack: 0x154a0000,0x154f0000] [id=11528]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 4928K, used 923K [0x04a00000, 0x04f50000, 0x09f50000)
+  eden space 4416K,  20% used [0x04a00000, 0x04ae6fd0, 0x04e50000)
+  from space 512K,   0% used [0x04e50000, 0x04e50000, 0x04ed0000)
+  to   space 512K,   0% used [0x04ed0000, 0x04ed0000, 0x04f50000)
+ tenured generation   total 10944K, used 0K [0x09f50000, 0x0aa00000, 0x14a00000)
+   the space 10944K,   0% used [0x09f50000, 0x09f50000, 0x09f50200, 0x0aa00000)
+ Metaspace       used 2358K, capacity 2378K, committed 2496K, reserved 4480K
+
+Card table byte_map: [0x00e60000,0x00ef0000] byte_map_base: 0x00e3b000
+
+Polling page: 0x00150000
+
+CodeCache: size=32768Kb used=689Kb max_used=689Kb free=32078Kb
+ bounds [0x02980000, 0x02a30000, 0x04980000]
+ total_blobs=165 nmethods=22 adapters=75
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 48.662 Thread 0x14eb8800 nmethod 18 0x02a28dc8 code [0x02a28ef0, 0x02a29094]
+Event: 48.682 Thread 0x14eb8800   19             java.io.DataInputStream::readShort (40 bytes)
+Event: 48.682 Thread 0x14eb8800 nmethod 19 0x02a29208 code [0x02a29330, 0x02a29454]
+Event: 50.061 Thread 0x14eb8800   20   !         java.io.BufferedReader::readLine (304 bytes)
+Event: 50.063 Thread 0x14eb8800 nmethod 20 0x02a29a88 code [0x02a29c40, 0x02a2a794]
+Event: 58.890 Thread 0x14eb8800   21             java.lang.String::indexOf (166 bytes)
+Event: 58.891 Thread 0x14eb8800 nmethod 21 0x02a2b808 code [0x02a2b920, 0x02a2bb50]
+Event: 58.891 Thread 0x14eb8800   22             java.io.WinNTFileSystem::normalize (143 bytes)
+Event: 58.892 Thread 0x14eb8800 nmethod 22 0x02a2be88 code [0x02a2bfd0, 0x02a2c23c]
+Event: 58.971 Thread 0x14eb8800   23             sun.nio.cs.UTF_8$Decoder::decodeArrayLoop (671 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (3 events):
+Event: 43.042 Thread 0x00f4bc00 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x04a0a7b0) thrown at [D:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u5\2488\hotspot\src\share\vm1F/h…E@
+Event: 43.042 Thread 0x00f4bc00 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x04a0aa30) thrown at [D:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u5\2488\hotspot\src\share\vm\prims\jni.cpp, liÕ«àe·F@
+Event: 45.433 Thread 0x00f4bc00 Exception <a 'java/security/PrivilegedActionException'> (0x04a6ddd8) thrown at [D:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u5\2488\hotspot\src\share\vm\prims\jvm.cpp, line 1248]
+
+Events (10 events):
+Event: 58.890 loading class java/util/LinkedHashMap$LinkedEntrySet
+Event: 58.890 loading class java/util/LinkedHashMap$LinkedEntrySet done
+Event: 58.890 loading class java/util/LinkedHashMap$LinkedEntryIterator
+Event: 58.890 loading class java/util/LinkedHashMap$LinkedHashIterator
+Event: 58.890 loading class java/util/LinkedHashMap$LinkedHashIterator done
+Event: 58.890 loading class java/util/LinkedHashMap$LinkedEntryIterator done
+Event: 58.890 loading class sun/misc/Launcher$BootClassPathHolder
+Event: 58.890 loading class sun/misc/Launcher$BootClassPathHolder done
+Event: 58.890 loading class sun/misc/Launcher$BootClassPathHolder$1
+Event: 58.890 loading class sun/misc/Launcher$BootClassPathHolder$1 done
+
+
+Dynamic libraries:
+0x01000000 - 0x01030000 	C:\Program Files (x86)\Java\jdk1.8.0_05\bin\java.exe
+0x77720000 - 0x778a0000 	C:\Windows\SysWOW64\ntdll.dll
+0x766d0000 - 0x767d0000 	C:\Windows\syswow64\kernel32.dll
+0x76680000 - 0x766c6000 	C:\Windows\syswow64\KERNELBASE.dll
+0x76590000 - 0x76630000 	C:\Windows\syswow64\ADVAPI32.dll
+0x76e30000 - 0x76edc000 	C:\Windows\syswow64\msvcrt.dll
+0x772a0000 - 0x772b9000 	C:\Windows\SysWOW64\sechost.dll
+0x76440000 - 0x76530000 	C:\Windows\syswow64\RPCRT4.dll
+0x75290000 - 0x752f0000 	C:\Windows\syswow64\SspiCli.dll
+0x75280000 - 0x7528c000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x75580000 - 0x75680000 	C:\Windows\syswow64\USER32.dll
+0x763b0000 - 0x76440000 	C:\Windows\syswow64\GDI32.dll
+0x76940000 - 0x7694a000 	C:\Windows\syswow64\LPK.dll
+0x753c0000 - 0x7545d000 	C:\Windows\syswow64\USP10.dll
+0x73880000 - 0x73a1e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7600.16385_none_421189da2b7fabfc\COMCTL32.dll
+0x772c0000 - 0x77317000 	C:\Windows\syswow64\SHLWAPI.dll
+0x76530000 - 0x76590000 	C:\Windows\system32\IMM32.DLL
+0x752f0000 - 0x753bc000 	C:\Windows\syswow64\MSCTF.dll
+0x710a0000 - 0x710cc000 	C:\Program Files (x86)\AVG\Av\avghookx.dll
+0x6e3c0000 - 0x6e47f000 	C:\Program Files (x86)\Java\jdk1.8.0_05\jre\bin\msvcr100.dll
+0x6b340000 - 0x6b6d6000 	C:\Program Files (x86)\Java\jdk1.8.0_05\jre\bin\client\jvm.dll
+0x72870000 - 0x72877000 	C:\Windows\system32\WSOCK32.dll
+0x75720000 - 0x75755000 	C:\Windows\syswow64\WS2_32.dll
+0x77290000 - 0x77296000 	C:\Windows\syswow64\NSI.dll
+0x72390000 - 0x723c2000 	C:\Windows\system32\WINMM.dll
+0x75710000 - 0x75715000 	C:\Windows\syswow64\PSAPI.DLL
+0x711f0000 - 0x711fc000 	C:\Program Files (x86)\Java\jdk1.8.0_05\jre\bin\verify.dll
+0x70da0000 - 0x70dc1000 	C:\Program Files (x86)\Java\jdk1.8.0_05\jre\bin\java.dll
+0x6e520000 - 0x6e533000 	C:\Program Files (x86)\Java\jdk1.8.0_05\jre\bin\zip.dll
+0x75760000 - 0x763a9000 	C:\Windows\syswow64\SHELL32.dll
+0x767d0000 - 0x7692c000 	C:\Windows\syswow64\ole32.dll
+0x73e20000 - 0x73e2b000 	C:\Windows\system32\profapi.dll
+0x6ac00000 - 0x6aceb000 	C:\Windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: skripsi_svmga.UI
+java_class_path (initial): C:\Program Files (x86)\NetBeans 8.0\ide\modules\ext\mysql-connector-java-5.1.23-bin.jar;C:\Users\harist\Documents\NetBeansProjects\Skripsi_SVMGA\build\classes
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Trend Micro\AMSP
+USERNAME=harist
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7600 
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, clmul, ht, tsc, tscinvbit
+
+Memory: 4k page, physical 4170524k(419120k free), swap 9621732k(396332k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.5-b02) for windows-x86 JRE (1.8.0_05-b13), built on Mar 18 2014 01:14:47 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Sat Jan 02 07:11:47 2016
+elapsed time: 62 seconds
+

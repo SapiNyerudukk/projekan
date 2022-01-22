@@ -1,0 +1,60 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x028bbac0, pid=7332, tid=12808
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_05-b13) (build 1.8.0_05-b13)
+# Java VM: Java HotSpot(TM) Client VM (25.5-b02 mixed mode windows-x86 )
+# Problematic frame:
+# J 47 C1 java.lang.Math.min(II)I (11 bytes) @ 0x028bbac0 [0x028bbac0+0x0]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x15ef4400):  JavaThread "AWT-EventQueue-0" [_thread_in_Java, id=12808, stack(0x15ae0000,0x15b30000)]
+
+siginfo: ExceptionCode=0xc0000005, writing address 0x15b29ffc
+
+Registers:
+EAX=0x14a8af58, EBX=0x14a8af58, ECX=0x0000001b, EDX=0x00000021
+ESP=0x15b2dffc, EBP=0x15b2e048, ESI=0x15b2e010, EDI=0x028bbac0
+EIP=0x028bbac0, EFLAGS=0x00010206
+
+Top of Stack: (sp=0x15b2dffc)
+0x15b2dffc:   02803d80 15ef4400 14ad3521 000000bc
+0x15b2e00c:   02803d80 00000021 0000001b 00000000
+0x15b2e01c:   04cf4d10 00000000 04cf4cb8 15b2e028
+0x15b2e02c:   14ad352b 15b2e058 14ad5f90 00000000
+0x15b2e03c:   14ad3540 15b2e010 15b2e054 15b2e07c
+0x15b2e04c:   02804054 04cf4d10 00000021 04cf4cb8
+0x15b2e05c:   15b2e05c 14a04c70 15b2e094 14a70a38
+0x15b2e06c:   00000000 14a04c98 15b2e054 15b2e090 
+
+Instructions: (pc=0x028bbac0)
+0x028bbaa0:   02 f8 62 6b 9c 41 05 70 0b 68 01 f8 aa ff 06 90
+0x028bbab0:   05 68 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+0x028bbac0:   89 84 24 00 c0 ff ff 55 83 ec 18 3b ca 0f 4e d1
+0x028bbad0:   8b c2 83 c4 18 5d 85 05 00 01 2a 00 c3 90 90 64 
+
+
+Register to memory mapping:
+
+EAX=0x14a8af58 is an unknown value
+EBX=0x14a8af58 is an unknown value
+ECX=0x0000001b is an unknown value
+EDX=0x00000021 is an unknown value
+ESP=0x15b2dffc is pointing into the stack for thread: 0x15ef4400
+EBP=0x15b2e048 is pointing into the stack for thread: 0x15ef4400
+ESI=0x15b2e010 is pointing into the stack for thread: 0x15ef4400
+EDI=0x028bbac0 is at entry_point+0 in (nmethod*)0x028bb9c8
+
+
+Stack: [0x15ae0000,0x15b30000],  sp=0x15b2dffc,  free space=311k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+J 47 C1 java.lang.Math.min(II)I (11 bytes) @ 0x028bbac0 [0x028bbac0+0x0]
+C  0x00000000

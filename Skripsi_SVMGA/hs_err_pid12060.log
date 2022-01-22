@@ -1,0 +1,71 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0280a054, pid=12060, tid=10656
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_05-b13) (build 1.8.0_05-b13)
+# Java VM: Java HotSpot(TM) Client VM (25.5-b02 mixed mode windows-x86 )
+# Problematic frame:
+# j  java.util.ArrayList.size()I+0
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x14eee000):  JavaThread "AWT-EventQueue-0" [_thread_in_Java, id=10656, stack(0x16090000,0x160e0000)]
+
+siginfo: ExceptionCode=0xc0000005, writing address 0x160d9fe4
+
+Registers:
+EAX=0x00000000, EBX=0x14aa3858, ECX=0x00000ab9, EDX=0x14aa5398
+ESP=0x160ddfe4, EBP=0x160de004, ESI=0x14aa3848, EDI=0x160de00c
+EIP=0x0280a054, EFLAGS=0x00010283
+
+Top of Stack: (sp=0x160ddfe4)
+0x160ddfe4:   160ddfe4 14aa3848 160de00c 14aa5398
+0x160ddff4:   00000000 14aa3858 00000000 160de00c
+0x160de004:   160de038 02803d80 04ae39e0 00000001
+0x160de014:   04ae3958 160de010 14b44b7d 160de054
+0x160de024:   14b45408 00000000 14b44c48 160de00c
+0x160de034:   160de050 160de078 02804054 00000000
+0x160de044:   00000000 00000000 00000000 00000000
+0x160de054:   04ae3958 160de058 14b4493a 160de094 
+
+Instructions: (pc=0x0280a054)
+0x0280a034:   0d 24 b8 68 6b 0f 83 5d 00 00 00 89 84 24 00 f0
+0x0280a044:   ff ff 89 84 24 00 e0 ff ff 89 84 24 00 d0 ff ff
+0x0280a054:   89 84 24 00 c0 ff ff 64 8b 04 25 00 00 00 00 8b
+0x0280a064:   40 f4 c6 80 85 01 00 00 00 80 3d e0 5b 69 6b 00 
+
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0x14aa3858 is an unknown value
+ECX=0x00000ab9 is an unknown value
+EDX=0x14aa5398 is an unknown value
+ESP=0x160ddfe4 is pointing into the stack for thread: 0x14eee000
+EBP=0x160de004 is pointing into the stack for thread: 0x14eee000
+ESI=0x14aa3848 is an unknown value
+EDI=0x160de00c is pointing into the stack for thread: 0x14eee000
+
+
+Stack: [0x16090000,0x160e0000],  sp=0x160ddfe4,  free space=311k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+j  java.util.ArrayList.size()I+0
+j  sun.misc.URLClassPath.getLoader(I)Lsun/misc/URLClassPath$Loader;+13
+j  sun.misc.URLClassPath.getResource(Ljava/lang/String;Z)Lsun/misc/Resource;+42
+j  sun.misc.URLClassPath.getResource(Ljava/lang/String;)Lsun/misc/Resource;+3
+j  java.lang.ClassLoader.getBootstrapResource(Ljava/lang/String;)Ljava/net/URL;+6
+j  java.lang.ClassLoader.getResource(Ljava/lang/String;)Ljava/net/URL;+20
+j  java.lang.ClassLoader.getResource(Ljava/lang/String;)Ljava/net/URL;+12
+j  java.lang.ClassLoader.getResource(Ljava/lang/String;)Ljava/net/URL;+12
+j  sun.reflect.misc.MethodUtil.findClass(Ljava/lang/String;)Ljava/lang/Class;+35
+j  sun.reflect.misc.MethodUtil.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+16
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x142285]
